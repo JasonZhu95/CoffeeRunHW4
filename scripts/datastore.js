@@ -8,8 +8,7 @@
             // console.log('running the DataStore function');
             this.data = {};
         }
-        promiseResolvedWith(value)
-        {
+        promiseResolvedWith(value) {
             var promise = new Promise(function (resolve, reject) {
                 resolve(value);
             });

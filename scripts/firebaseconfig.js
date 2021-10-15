@@ -1,7 +1,7 @@
 (function (window) {
   'use strict';
   var App = window.App || {};
-    
+
   var FirebaseConfig = {
     apiKey: "AIzaSyC4skvGs2Gy-3FqIw5gLBxu0HiW7p_kwPU",
     authDomain: "coffeerunhw4-b7d54.firebaseapp.com",
@@ -13,7 +13,7 @@
   };
   App.FirebaseConfig = FirebaseConfig;
   firebase.initializeApp(App.FirebaseConfig);
-  
+
   window.App = App;
-  
-  })(window);
+
+})(window);

@@ -12,7 +12,7 @@
     var FormHandler = App.FormHandler;
     var Validation = App.Validation;
     var CheckList = App.CheckList;
-    
+
     // var datastore = new DataStore();
     // var datastore = new RemoteDataStore(SERVER_URL);
     var datastore = new FirebaseDataStore(FIREBASE_SERVER_URL);
@@ -22,14 +22,14 @@
     var checkList = new CheckList(CHECKLIST_SELECTOR);
     checkList.addClickHandler(truck.deliverOrder.bind(truck));
     var formHandler = new FormHandler(FORM_SELECTOR);
-    formHandler.addSubmitHandler(function(data) {
+    formHandler.addSubmitHandler(function (data) {
         return truck.createOrder.call(truck, data)
-            .then(function() {
-                checkList.addRow.call(checkList, data);
-            },
-            function() { 
-                alert('Server unreachable. Try again later.');
-            });
+            .then(function () {
+                    checkList.addRow.call(checkList, data);
+                },
+                function () {
+                    alert('Server unreachable. Try again later.');
+                });
     });
 
     formHandler.addInputHandler(Validation.isCompanyEmail);
