@@ -1,16 +1,13 @@
-import { initializeApp } from "firebase/app";
-
 (function (window) {
   'use strict';
 
   var App = window.App || {};
-  var $ = window.jQuery;
+  //var $ = window.jQuery;
 
-  class FirebaseDataStore {
+  class firebasedatastore {
       constructor() {
-        console.log('running the FireBaseDataStore function');
-        app = initializeApp(window.FirebaseConfig);
-        this.db = getFirestore(app);
+        console.log('running the firebasedatastore function');
+        this.db = firebase.firestore();
       }
 
       async add(key, val) {
@@ -47,7 +44,7 @@ import { initializeApp } from "firebase/app";
           return result;
        }
   }
-  App.FirebaseDataStore = FirebaseDataStore;
+  App.firebasedatastore = firebasedatastore;
   window.App = App;
 
 })(window);

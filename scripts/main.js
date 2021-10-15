@@ -2,13 +2,13 @@
     'use strict';
     var FORM_SELECTOR = '[data-coffee-order="form"]';
     var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
-    var SERVER_URL = 'http://coffeerun-v2-rest-api.herokuapp.com/api/coffeeorders';
-    var FIREBASE_SERVER_URL = 'coffeerunhw4-b7d54.firebaseapp.com';
+    // var SERVER_URL = 'http://coffeerun-v2-rest-api.herokuapp.com/api/coffeeorders';
+    var FIREBASE_SERVER_URL = 'http://coffeerunhw4-b7d54.firebaseapp.com';
 
     var App = window.App;
     var Truck = App.Truck;
-    var DataStore = App.DataStore;
-    var RemoteDataStore = App.RemoteDataStore;
+    // var DataStore = App.DataStore;
+    // var RemoteDataStore = App.RemoteDataStore;
     var FirebaseDataStore = App.FirebaseDataStore;
     var FormHandler = App.FormHandler;
     var Validation = App.Validation;
@@ -17,7 +17,7 @@
     // var datastore = new RemoteDataStore(SERVER_URL);
     // var truck = new Truck('ncc-1701', remoteDS);
     var datastore = new FirebaseDataStore(FIREBASE_SERVER_URL);
-    var truck = new Truck('ncc-1701', datastore);
+    var truck = new Truck('ncc-1705', datastore);
     window.truck = truck;
 
     var checkList = new CheckList(CHECKLIST_SELECTOR);
